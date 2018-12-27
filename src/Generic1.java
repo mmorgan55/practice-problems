@@ -29,4 +29,33 @@ public class Generic1 {
     return list.size() > 0 ? list.get(0) : '_';
   }
 
+
+  int phoneCall(int min1, int min2_10, int min11, int s) {
+    int totalTime = 0;
+    int totalCost = 0;
+
+    if (min1 > s) {
+      return totalTime;
+    }
+
+    totalCost += min1;
+    totalTime++;
+
+    while (true) {
+      if (totalTime < 10) {
+        totalCost += min2_10;
+      } else {
+        totalCost += min11;
+      }
+
+      if (totalCost > s) {
+        break;
+      }
+
+      totalTime++;
+    }
+
+    return totalTime;
+  }
+
 }
