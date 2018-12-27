@@ -58,4 +58,29 @@ public class Generic1 {
     return totalTime;
   }
 
+  //Not a great answer since it's O(N*M)
+  //Learned that there is a bitCount method in Integer. Should've used it
+  int rangeBitCount(int a, int b) {
+    int numOnes = 0;
+    int[] arr = new int[b - a + 1];
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = a;
+      a++;
+    }
+
+    for (int num : arr) {
+      String str = Integer.toBinaryString(num);
+      for (int i = 0; i < str.length(); i++) {
+        if (str.charAt(i) == '1') {
+          numOnes++;
+        }
+      }
+    }
+
+    return numOnes;
+
+  }
+
+
+
 }
