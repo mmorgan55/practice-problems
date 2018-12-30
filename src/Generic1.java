@@ -78,8 +78,6 @@ public class Generic1 {
       }
     }
 
-
-
     return numOnes;
 
   }
@@ -92,6 +90,25 @@ public class Generic1 {
     }
 
     return result;
+  }
+
+  boolean increaseNumberRoundness(int n) {
+    boolean seenZero = false;
+
+    String str = String.valueOf(n);
+
+    for(int i = 0; i < str.length(); i++) {
+      if (!(str.charAt(i) == '0')) {
+        if (seenZero) {
+          return true;
+        }
+
+      } else {
+        seenZero = true;
+      }
+    }
+
+    return false;
   }
 
 
