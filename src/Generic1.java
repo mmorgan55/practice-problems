@@ -71,15 +71,29 @@ public class Generic1 {
     for (int num : arr) {
       String str = Integer.toBinaryString(num);
       for (int i = 0; i < str.length(); i++) {
+
         if (str.charAt(i) == '1') {
           numOnes++;
         }
       }
     }
 
+
+
     return numOnes;
 
   }
+
+  int appleBoxes(int k) {
+    int result = 0;
+
+    for (int i = 1; i <= k; i++) {
+      result += (i % 2 == 0) ?  (i * i) : -(i * i);
+    }
+
+    return result;
+  }
+
 
 
 
