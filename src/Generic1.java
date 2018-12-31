@@ -111,6 +111,22 @@ public class Generic1 {
     return false;
   }
 
+  boolean containsDuplicates(int[] a) {
+
+    Set<Integer> set = new HashSet<>();
+
+    for (int i : a) {
+      if (set.contains(i)) {
+        return true;
+      } else {
+        set.add(i);
+      }
+    }
+
+    return false;
+  }
+
+
 
 
 
