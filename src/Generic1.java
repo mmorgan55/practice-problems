@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Generic1 {
 
@@ -125,6 +127,22 @@ public class Generic1 {
 
     return false;
   }
+
+  // Collectors class is very useful to put an array of ints into a collection.
+  boolean sumOfTwo(int[] a, int[] b, int v) {
+    Set<Integer> set = Arrays.stream(b).boxed().collect(Collectors.toSet());
+
+    for (int i : a) {
+      if (set.contains(v - i)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+
+
 
 
 
