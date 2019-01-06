@@ -38,4 +38,18 @@ public class Generic3 {
 
   }
 
+  int jumpingOnClouds(int[] c) {
+    int n = c.length;
+    int count = -1;
+    
+    for (int i = 0; i < n; i++, count++) {
+      if (i < n-2 && c[i+2] == 0) {
+        i++;
+      }
+    }
+
+    return count;
+
+  }
+
 }
