@@ -19,4 +19,23 @@ public class Generic3 {
     return numPairs;
   }
 
+  int countingValleys(int n, String s) {
+    int numValleys = 0;
+    int value = 0;
+
+    for (int i = 0; i < n; i++) {
+      if (s.charAt(i) == 'D') {
+        value--;
+      } else {
+        if ((value + 1) == 0) {
+          numValleys++;
+        }
+        value++;
+      }
+    }
+
+    return numValleys;
+
+  }
+
 }
